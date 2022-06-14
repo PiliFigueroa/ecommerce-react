@@ -1,11 +1,12 @@
 import './App.css'
-import { Navigation } from './components/Navigation'
+import { Navigation, ItemListContainer } from './components'
 
 const App = () => {
 
   return (
     <div className="App">
       <Navigation />
+      <ItemListContainer />
     </div>
   )
 }
