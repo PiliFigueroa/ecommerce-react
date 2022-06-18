@@ -1,5 +1,5 @@
 import './App.css'
-import { Navigation, ItemListContainer } from './components'
+import { Navigation, ItemListContainer, ItemCount } from './components'
 
 const App = () => {
 
@@ -7,6 +7,7 @@ const App = () => {
     <div className="App">
       <Navigation />
       <ItemListContainer />
+      <ItemCount initial={1} stock={10} onAdd={() => {}} />
     </div>
   )
 }
