@@ -1,7 +1,7 @@
 export const products = [
     {
         id: 1,
-        image: "../assets/dados_blue.jpg",
+        image: "https://www.dualgames.es/productos/imagenes/img_6201_c4cfc5feafcf28c483b146d051067378_1.jpg",
         product: "Set 7 dados basicos",
         category: "dados",
         price: 1500,
@@ -15,9 +15,9 @@ export const products = [
     },
     {
         id: 2,
-        image: "../assets/libro2.jpg",
+        image: "https://http2.mlstatic.com/D_NQ_NP_605297-MLA44101147410_112020-O.jpg",
         product: "Player's handbook",
-        category: "dados",
+        category: "libros",
         price: 11999,
         stock: 25,
         initial: 1,
@@ -28,9 +28,9 @@ export const products = [
     },
     {
         id: 3,
-        image: "../assets/folios.jpg",
+        image: "https://http2.mlstatic.com/D_NQ_NP_620372-MLA32999154967_112019-O.webp",
         product: "Folios Gold Premium",
-        category: "dados",
+        category: "accesorios",
         price: 200,
         stock: 1000,
         initial: 1,
@@ -41,9 +41,9 @@ export const products = [
     },
     {
         id: 4,
-        image: "../assets/miniaturas.jpg",
+        image: "https://m.media-amazon.com/images/I/71meLUBjkuL._AC_SX425_.jpg",
         product: "Kit miniaturas inicial",
-        category: "dados",
+        category: "figuras",
         price: 2500,
         stock: 20,
         initial: 1,

@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png'
 
 const Navigation = () => {
     return(
-        <HStack>
+        <HStack boxShadow='lg' bg='white'>
             <img src={logo} ald="Logo" width="80px" />
             <Spacer />
             <Box>        

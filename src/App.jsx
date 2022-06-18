@@ -6,8 +6,8 @@ const App = () => {
   return (
     <div className="App">
       <Navigation />
-      <ItemListContainer />
-      <ItemCount initial={1} stock={10} onAdd={() => {}} />
+      {/* <ItemListContainer /> */}
+      {/* <ItemCount initial={1} stock={10} onAdd={() => {}} /> */}
     </div>
   )
 }
