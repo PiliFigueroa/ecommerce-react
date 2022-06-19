@@ -12,13 +12,13 @@ const Navigation = () => {
             <Spacer />
             <Box>  
                 <Redirect to="category/libros" >      
-                    <Link mx="8px">Libros</Link>
+                    <Link as="span" mx="8px">Libros</Link>
                 </Redirect>
                 <Redirect to="category/dados" >
-                    <Link mx="8px">Dados</Link>
+                    <Link as="span" mx="8px">Dados</Link>
                 </Redirect>
                 <Redirect to="category/figuras" >
-                    <Link mx="8px">Figuras</Link>
+                    <Link as="span" mx="8px">Figuras</Link>
                 </Redirect>
                 <CartWidget />
             </Box>   

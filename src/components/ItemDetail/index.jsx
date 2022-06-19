@@ -6,7 +6,7 @@ const ItemDetail = ({ img, name, price, id, stock, config, description, initial 
     return(
         <Center boxShadow='lg' p='6' rounded='md' bg='white' m="20px auto" maxWidth="800px">
             <Image src={img} w="200px" />
-            <VStack maxWidth="500px" align="left">
+            <VStack maxWidth="500px" align="left" p="20px">
                 <Heading>{name}</Heading>
                 <Text className='bold' fontSize='2xl'>${price}</Text>
                 <Text>Stock: {stock}</Text>
