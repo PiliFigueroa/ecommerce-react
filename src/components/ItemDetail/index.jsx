@@ -1,16 +1,35 @@
-import { VStack, Center, Text, Image, Heading, Select, HStack } from '@chakra-ui/react'
+import { VStack, Center, Text, Image, Heading, Select, HStack, Tooltip } from '@chakra-ui/react'
+import { FaCreditCard, FaRegCreditCard, FaRegHeart, FaHeart } from "react-icons/fa";
 import { ItemCount } from '../ItemCount'
+import { useState } from 'react'
+import { CustomCard } from '../../utils/Tooltip'
+
+
 
 const ItemDetail = ({ img, name, price, id, stock, config, description, initial }) => {
+
+    const [fav, setFav] = useState(false)
+
+    const handleFav = () => setFav(!fav)
 
     return(
         <Center boxShadow='lg' p='6' rounded='md' bg='white' m="20px auto" maxWidth="800px">
             <Image src={img} w="200px" />
-            <VStack maxWidth="500px" align="left" p="20px">
-                <Heading>{name}</Heading>
+            <VStack maxWidth="500px" align="left" mx="15px">
+                <HStack>
+                    <Heading>{name}</Heading>
+                    <Tooltip fontSize='xs' bg="whitesmoke" color="#1a202c" label="Add to favorites!" aria-label='A tooltip' hasArrow>
+                        <CustomCard>
+                            {fav ? <FaHeart size='20px' onClick={handleFav} cursor="pointer" /> : <FaRegHeart size='20px' onClick={handleFav} cursor="pointer" />}
+                        </CustomCard>
+                    </Tooltip>
+                </HStack>
                 <Text className='bold' fontSize='2xl'>${price}</Text>
                 <Text>Stock: {stock}</Text>
-                <Text>{description}</Text>                
+                <HStack>
+                    <FaCreditCard /><FaRegCreditCard />
+                </HStack>
+                <Text fontSize='xs'>{description}</Text>                
                 {config.color && 
                 <>
                     <Text className='bold'>Color</Text>

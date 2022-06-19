@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
+import { FaShoppingCart } from "react-icons/fa"
 import { HStack, Button } from '@chakra-ui/react'
 
 const ItemCount = ({ initial, stock, onAdd }) => {
@@ -10,10 +11,10 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
     return(
         <HStack>
-            <Button colorScheme='teal' size='sm' onClick={decrease}>-</Button>
+            <Button variant='ghost' colorScheme='red' size='sm' onClick={decrease}>-</Button>
             <p>{count}</p>
-            <Button colorScheme='teal' size='sm' onClick={increase}>+</Button>
-            <Button>Agregar al carrito</Button>
+            <Button variant='ghost' colorScheme='red' size='sm' onClick={increase}>+</Button>
+            <Button colorScheme='red' size='sm' leftIcon={<FaShoppingCart />}>Agregar al carrito</Button>
         </HStack>
     )
 }

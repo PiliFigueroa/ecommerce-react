@@ -1,4 +1,4 @@
-import { InfoIcon } from '@chakra-ui/icons'
+import { FaShoppingCart } from "react-icons/fa"
 import { useDisclosure, Drawer, DrawerBody, DrawerContent, DrawerOverlay, DrawerHeader } from '@chakra-ui/react'
 
 const CartWidget = () => {
@@ -7,7 +7,7 @@ const CartWidget = () => {
 
     return(
         <>
-            <InfoIcon w={6} h={6} onClick={onOpen} />
+            <FaShoppingCart w={6} h={6} onClick={onOpen} cursor="pointer" />
             <Drawer placement='right' onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent>

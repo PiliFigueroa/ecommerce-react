@@ -5,12 +5,12 @@ import { CartWidget } from '../CartWidget'
 
 const Navigation = () => {
     return(
-        <HStack boxShadow='lg' bg='white'>
+        <HStack boxShadow='lg' bg='white' px="20px">
             <Redirect to="/" >
                 <img src={logo} ald="Logo" width="80px" />
             </Redirect>
             <Spacer />
-            <Box>  
+            <HStack spacing="10px">  
                 <Redirect to="category/libros" >      
                     <Link as="span" mx="8px">Libros</Link>
                 </Redirect>
@@ -21,7 +21,7 @@ const Navigation = () => {
                     <Link as="span" mx="8px">Figuras</Link>
                 </Redirect>
                 <CartWidget />
-            </Box>   
+            </HStack>   
         </HStack>
     )
 }
