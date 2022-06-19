@@ -7,6 +7,10 @@
     text-transform: capitalize;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .circle {
     border-radius: 100%;
     width: 20px;

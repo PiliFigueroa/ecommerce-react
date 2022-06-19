@@ -1,21 +1,19 @@
-import { VStack, Box, Center, Button, Text, Image, Heading, Select, HStack } from '@chakra-ui/react'
+import { VStack, Center, Text, Image, Heading, Select, HStack } from '@chakra-ui/react'
 import { ItemCount } from '../ItemCount'
 
 const ItemDetail = ({ img, name, price, id, stock, config, description, initial }) => {
 
-    console.log(config)
-
     return(
-        <Center boxShadow='lg' p='6' rounded='md' bg='white' m="20px">
+        <Center boxShadow='lg' p='6' rounded='md' bg='white' m="20px auto" maxWidth="800px">
             <Image src={img} w="200px" />
-            <VStack>
+            <VStack maxWidth="500px" align="left">
                 <Heading>{name}</Heading>
-                <Text>${price}</Text>
+                <Text className='bold' fontSize='2xl'>${price}</Text>
                 <Text>Stock: {stock}</Text>
                 <Text>{description}</Text>                
                 {config.color && 
                 <>
-                    <Text>Color</Text>
+                    <Text className='bold'>Color</Text>
                     <HStack>
                         {config.color.map((col, index) => <div key={`${col}-${index}`} className="capitalize circle" style={{backgroundColor: col}} value={col}></div>)}
                     </HStack>
