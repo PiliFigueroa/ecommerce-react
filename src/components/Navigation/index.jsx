@@ -7,7 +7,7 @@ const Navigation = () => {
     return(
         <HStack boxShadow='lg' bg='white' px="20px">
             <Redirect to="/" >
-                <img src={logo} ald="Logo" width="80px" />
+                <img src={logo} ald="Logo" width="50px" />
             </Redirect>
             <Spacer />
             <HStack spacing="10px">  

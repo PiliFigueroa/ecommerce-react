@@ -18,7 +18,7 @@ const ItemDetail = ({ img, name, price, id, stock, config, description, initial 
             <VStack maxWidth="500px" align="left" mx="15px">
                 <HStack>
                     <Heading>{name}</Heading>
-                    <Tooltip fontSize='xs' bg="whitesmoke" color="#1a202c" label="Add to favorites!" aria-label='A tooltip' hasArrow>
+                    <Tooltip fontSize='xs' bg="whitesmoke" color="#1a202c" label={fav ? "Remove favorite :(" : "Add to favorites!"} aria-label='A tooltip' hasArrow>
                         <CustomCard>
                             {fav ? <FaHeart size='20px' onClick={handleFav} cursor="pointer" /> : <FaRegHeart size='20px' onClick={handleFav} cursor="pointer" />}
                         </CustomCard>
