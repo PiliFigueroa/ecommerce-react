@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
 
     return(
         <>
-            {listProduct ? <ItemDetail name={listProduct.product} id={listProduct.id} stock={listProduct.stock} initial={listProduct.initial} description={listProduct.description} config={listProduct.config} price={listProduct.price} img={listProduct.image} /> : <Loader />}
+            {listProduct ? <ItemDetail listProduct={listProduct} /> : <Loader />}
         </>
     )
 }

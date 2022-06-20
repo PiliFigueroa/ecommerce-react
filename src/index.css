@@ -16,3 +16,16 @@
     width: 20px;
     height: 20px;
 }
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    color: #fff;
+    background-color: red;
+    border-radius: 50%;
+    text-align: center;
+}
+  

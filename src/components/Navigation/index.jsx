@@ -1,6 +1,6 @@
-import { Link, HStack, Box, Spacer } from '@chakra-ui/react'
+import { Link, HStack, Spacer } from '@chakra-ui/react'
 import logo from '../../assets/logo.png'
-import { Link as Redirect } from "react-router-dom"
+import { NavLink as Redirect } from "react-router-dom"
 import { CartWidget } from '../CartWidget'
 
 const Navigation = () => {
