@@ -1,6 +1,7 @@
 import { VStack, Center, Text, Image, Heading, Select, HStack, Tooltip } from '@chakra-ui/react'
 import { FaCreditCard, FaRegCreditCard, FaRegHeart, FaHeart } from "react-icons/fa"
 import { useCartContext } from "../../context/CartContext"
+import { useFavoritesContext } from "../../context/FavoritesContext"
 import { ItemCount } from '../ItemCount'
 import { useState } from 'react'
 import { CustomCard } from '../../utils/Tooltip'
@@ -12,9 +13,13 @@ const ItemDetail = ({ listProduct }) => {
     const { image, product, price, stock, config, description, initial } = listProduct
 
     const { addToCart } = useCartContext()
+    const { addToFavorites } = useFavoritesContext()
     const [fav, setFav] = useState(false)
 
-    const handleFav = () => setFav(!fav)
+    const handleFav = () => {
+        setFav(!fav)
+        addToFavorites(listProduct)
+    }
     const onAdd = (quantity) => addToCart(listProduct, quantity)
 
     return(

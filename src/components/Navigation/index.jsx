@@ -4,6 +4,9 @@ import { NavLink as Redirect } from "react-router-dom"
 import { CartWidget } from '../CartWidget'
 
 const Navigation = () => {
+
+    const config = ['libros', 'dados', 'figuras', 'accesorios']
+
     return(
         <HStack boxShadow='lg' bg='white' px="20px">
             <Redirect to="/" >
@@ -11,14 +14,13 @@ const Navigation = () => {
             </Redirect>
             <Spacer />
             <HStack spacing="10px">  
-                <Redirect to="category/libros" >      
-                    <Link as="span" mx="8px">Libros</Link>
-                </Redirect>
-                <Redirect to="category/dados" >
-                    <Link as="span" mx="8px">Dados</Link>
-                </Redirect>
-                <Redirect to="category/figuras" >
-                    <Link as="span" mx="8px">Figuras</Link>
+                {config.map((category, index) => 
+                    <Redirect key={`${category}-${index}`} to={`category/${category}`} >      
+                        <Link as="span" mx="8px" className='capitalize'>{category}</Link>
+                    </Redirect>)
+                }
+                <Redirect to="favorites" >      
+                    <Link as="span" mx="8px" className='capitalize' color="red">Favorites</Link>
                 </Redirect>
                 <CartWidget />
             </HStack>   

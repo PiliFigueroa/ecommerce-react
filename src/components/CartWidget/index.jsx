@@ -18,7 +18,7 @@ const CartWidget = () => {
                     <DrawerBody>
                         {cartList.length === 0 
                         ?
-                            <Text>No hay productos en el carrito</Text>
+                            <Text>You don't have products yet :(</Text>
                         :
                         <>
                             {cartList.map((prod, index) => 
