@@ -1,6 +1,7 @@
 import { FaShoppingCart } from "react-icons/fa"
 import { useCartContext } from "../../context/CartContext"
-import { useDisclosure, Drawer, DrawerBody, DrawerContent, DrawerOverlay, DrawerHeader, Text, HStack, VStack, Image, Button } from '@chakra-ui/react'
+import { Link } from "react-router-dom"
+import { useDisclosure, Drawer, DrawerBody, DrawerContent, DrawerOverlay, DrawerHeader, Text, HStack, VStack, Image, Button, DrawerCloseButton } from '@chakra-ui/react'
 
 const CartWidget = () => {
 
@@ -14,11 +15,12 @@ const CartWidget = () => {
             <Drawer placement='right' onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerHeader borderBottomWidth='1px'>Your cart</DrawerHeader>
+                    <DrawerCloseButton />
+                    <DrawerHeader borderBottomWidth='1px'>Tu carrito</DrawerHeader>
                     <DrawerBody>
                         {cartList.length === 0 
                         ?
-                            <Text>You don't have products yet :(</Text>
+                            <Text>Aun no hay productos :(</Text>
                         :
                         <>
                             {cartList.map((prod, index) => 
@@ -32,7 +34,9 @@ const CartWidget = () => {
                                 </HStack>
                             )}
                             <Text my="10px">Total: ${totalPrice()}</Text>
-                            <Button colorScheme='red' size='sm'>Finalizar Compra</Button>
+                            <Link to="/checkout">
+                                <Button colorScheme='red' size='sm'>Finalizar Compra</Button>
+                            </Link>
                         </>
                         }
                     </DrawerBody>

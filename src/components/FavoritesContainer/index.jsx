@@ -8,7 +8,7 @@ const FavoritesContainer = () => {
     return(
         <Center>
             <VStack>
-                <Heading my="20px">My Favorites</Heading>
+                <Heading my="40px">My Favorites</Heading>
                 <Box boxShadow='lg' p='6' rounded='md' bg='white'>
                     {favoritesList.length > 0 
                         ? 

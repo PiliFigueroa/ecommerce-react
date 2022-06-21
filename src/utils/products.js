@@ -10,8 +10,8 @@ export const products = [
         initial: 1,
         config: {
             color: ['red', 'yellow', 'blue', 'purple', 'green'],
-            size: ['standard', 'big'],
-            material: ['plastic', 'ceramic', 'metal']
+            size: ['Standard', 'Big'],
+            material: ['Plastic', 'Ceramic', 'Metal']
         }
     },
     {
@@ -24,8 +24,8 @@ export const products = [
         stock: 25,
         initial: 1,
         config: {
-            languages: ['spanish', 'english'],
-            material: ['photograph paper']
+            languages: ['Spanish', 'English'],
+            material: ['Photograph paper']
         }
     },
     {
@@ -38,8 +38,8 @@ export const products = [
         stock: 1000,
         initial: 1,
         config: {
-            size: ['standard', 'big'],
-            material: ['plastic']
+            size: ['Standard', 'Big'],
+            material: ['Plastic']
         }
     },
     {
@@ -52,8 +52,8 @@ export const products = [
         stock: 20,
         initial: 1,
         config: {
-            size: ['small','medium'],
-            material: ['plastic', 'metal']
+            size: ['S','M'],
+            material: ['Plastic', 'Metal']
         }
     }
 ]
