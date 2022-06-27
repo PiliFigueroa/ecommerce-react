@@ -49,7 +49,7 @@ const Checkout = () => {
                 <Heading my="40px">Checkout</Heading>
                 <VStack>
                     {cartList.map(prod => 
-                        <HStack boxShadow='lg' p='6' rounded='md' spacing={10} bg="white">
+                        <HStack key={prod.id} boxShadow='lg' p='6' rounded='md' spacing={10} bg="white">
                             <Image src={prod.image} w="100px"></Image>
                             <Text as='b'>{prod.product}</Text>
                             <Text as='b'>Cantidad: {prod.quantity}</Text>

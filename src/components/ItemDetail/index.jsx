@@ -1,9 +1,10 @@
-import { VStack, Center, Text, Image, Heading, Select, HStack, Tooltip } from '@chakra-ui/react'
+import { VStack, Center, Text, Image, Heading, Select, HStack, Tooltip, Button } from '@chakra-ui/react'
 import { FaCreditCard, FaRegCreditCard, FaRegHeart, FaHeart } from "react-icons/fa"
 import { useCartContext } from "../../context/CartContext"
 import { useFavoritesContext } from "../../context/FavoritesContext"
 import { ItemCount } from '../ItemCount'
 import { useState } from 'react'
+import { Link } from "react-router-dom"
 import { CustomCard } from '../../utils/Tooltip'
 
 
@@ -15,12 +16,16 @@ const ItemDetail = ({ listProduct }) => {
     const { addToCart } = useCartContext()
     const { addToFavorites } = useFavoritesContext()
     const [fav, setFav] = useState(false)
+    const [added, setAdded] = useState(false)
 
     const handleFav = () => {
         setFav(!fav)
         addToFavorites(listProduct)
     }
-    const onAdd = (quantity) => addToCart(listProduct, quantity)
+    const onAdd = (quantity) => {
+        addToCart(listProduct, quantity)
+        setAdded(true)
+    }
 
     return(
         <Center boxShadow='lg' p='6' rounded='md' bg='white' m="20px auto" maxWidth="800px">
@@ -59,7 +64,13 @@ const ItemDetail = ({ listProduct }) => {
                 <Select placeholder="Sizes">
                     {config.languages.map((lang, index) => <option className='capitalize' key={`${lang}-${index}`}>{lang}</option>)}
                 </Select>}
-                <ItemCount initial={initial} stock={stock} onAdd={onAdd} />
+                {!added ?
+                    <ItemCount initial={initial} stock={stock} onAdd={onAdd} />
+                       :
+                    <Link to="/checkout">
+                       <Button colorScheme='red' size='sm'>Ir al carrito</Button>
+                    </Link>
+                }
             </VStack>
         </Center>
     )
