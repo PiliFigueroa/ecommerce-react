@@ -5,7 +5,7 @@ import { useDisclosure, Drawer, DrawerBody, DrawerContent, DrawerOverlay, Drawer
 
 const CartWidget = () => {
 
-    const { cartList, cartItemsQuantity, totalPrice } = useCartContext()
+    const { cartList, cartItemsQuantity, totalPrice, removeProduct, cleanCart } = useCartContext()
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return(
@@ -31,12 +31,14 @@ const CartWidget = () => {
                                         <Text fontSize="12px">${prod.price}</Text>
                                         <Text fontSize="12px">Cantidad: {prod.quantity}</Text>
                                     </VStack>
+                                    <Button colorScheme='red' size='sm' onClick={() => removeProduct(prod.id)}>X</Button>
                                 </HStack>
                             )}
                             <Text my="10px">Total: ${totalPrice()}</Text>
                             <Link to="/checkout">
                                 <Button colorScheme='red' size='sm'>Finalizar Compra</Button>
                             </Link>
+                            <Button colorScheme='teal' size='sm' mx="5px" onClick={cleanCart}>Vaciar Carrito</Button>
                         </>
                         }
                     </DrawerBody>
